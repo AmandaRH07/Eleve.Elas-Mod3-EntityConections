@@ -2,7 +2,7 @@
 
 namespace Conexao.Domain.Models
 {
-	internal class Professor
+	public class Professor
 	{
 		public int Id { get; set; }
 		public string Nome { get; set; }
@@ -11,5 +11,7 @@ namespace Conexao.Domain.Models
 		public string Banco { get; set; }
 		public string Agencia { get; set; }
 		public string Conta { get; set; }
+
+		public List<Turma> Turmas { get; set; }
 	}
 }

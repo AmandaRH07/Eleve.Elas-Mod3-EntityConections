@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Conexao.Data.Map
 {
-	internal class AlunoMap : IEntityTypeConfiguration<Aluno>
+	public class AlunoMap : IEntityTypeConfiguration<Aluno>
 	{
 		public void Configure(EntityTypeBuilder<Aluno> builder)
 		{
