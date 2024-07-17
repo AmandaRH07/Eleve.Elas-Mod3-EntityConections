@@ -13,5 +13,6 @@ namespace Conexao.Domain.Models
 		public string Conta { get; set; }
 
 		public List<Turma> Turmas { get; set; }
+
 	}
 }
