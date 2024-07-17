@@ -13,7 +13,7 @@ namespace Conexao.Data.Map
 			builder.HasKey(x => x.Id);
 
 			builder.Property(x => x.Nome)
-				.HasColumnType("nvarchar(150")
+				.HasColumnType("nvarchar(150)")
 				.IsRequired();
 
 			builder.Property(x => x.Ativo)
