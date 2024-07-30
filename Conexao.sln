@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conexao.Data", "Conexao.Data\Conexao.Data.csproj", "{43F55509-09E6-4A22-9CE5-A9EBDE4929F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conexao.Data", "Conexao.Data\Conexao.Data.csproj", "{43F55509-09E6-4A22-9CE5-A9EBDE4929F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conexao.Domain", "Conexao.Domain\Conexao.Domain.csproj", "{324502EA-0B70-4745-955A-C5E3F8FC8D0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conexao.Domain", "Conexao.Domain\Conexao.Domain.csproj", "{324502EA-0B70-4745-955A-C5E3F8FC8D0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conexao.Cons", "Conexao.Cons\Conexao.Cons.csproj", "{15503485-3595-4B1B-8AD8-A414C1D46F90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{324502EA-0B70-4745-955A-C5E3F8FC8D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{324502EA-0B70-4745-955A-C5E3F8FC8D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{324502EA-0B70-4745-955A-C5E3F8FC8D0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15503485-3595-4B1B-8AD8-A414C1D46F90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15503485-3595-4B1B-8AD8-A414C1D46F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15503485-3595-4B1B-8AD8-A414C1D46F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15503485-3595-4B1B-8AD8-A414C1D46F90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,13 +1,15 @@
 ﻿using Conexao.Data.Map;
 using Conexao.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+
 namespace Conexao.Data
 {
 	public class Contexto : DbContext
 	{
-        public DbSet<Aluno> Aluno { get; set; }
-        public DbSet<Professor> Professor { get; set; }
-        public DbSet<Turma> Turma { get; set; }
+		public DbSet<Aluno> Aluno { get; set; }
+		public DbSet<Professor> Professor { get; set; }
+		public DbSet<Turma> Turma { get; set; }
+		public DbSet<TurmaAluno> TurmaAluno { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -20,6 +22,7 @@ namespace Conexao.Data
 			modelBuilder.ApplyConfiguration(new AlunoMap());
 			modelBuilder.ApplyConfiguration(new ProfessorMap());
 			modelBuilder.ApplyConfiguration(new TurmaMap());
+			modelBuilder.ApplyConfiguration(new TurmaAlunoMap());
 
 			base.OnModelCreating(modelBuilder);
 		}
