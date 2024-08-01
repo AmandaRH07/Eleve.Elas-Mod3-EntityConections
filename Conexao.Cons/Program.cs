@@ -1,29 +1,31 @@
-﻿using Conexao.Data;
-using Conexao.Data.Repository;
+﻿using Conexao.Data.Repository;
 using Conexao.Domain.Models;
 using Conexao.Domain.Models.Enum;
+using System.Runtime.CompilerServices;
 
 class Program
 {
 	static void Main(string[] args)
 	{
-		IncluirAluno();
+		//IncluirAluno();
 
-		var alunos = ConsultarTodosAlunos();
-		if(alunos?.Count > 0)
-		{
-			AlterarNomeAluno(alunos[0]);
-			ExcluirAluno(alunos[1].Id);
-		}
+		//var alunos = ConsultarTodosAlunos();
+		//if(alunos?.Count > 0)
+		//{
+		//	AlterarNomeAluno(alunos[0]);
+		//	ExcluirAluno(alunos[1].Id);
+		//}
 
-		IncluirProfessor();
+		//IncluirProfessor();
 
-		var professores = ConsultarTodosProfessores();
-		if (professores?.Count > 0)
-		{
-			AlterarNomeProfessor(professores[0]);
-			ExcluirProfessor(professores[1].Id);
-		}
+		//var professores = ConsultarTodosProfessores();
+		//if (professores?.Count > 0)
+		//{
+		//	AlterarNomeProfessor(professores[0]);
+		//	ExcluirProfessor(professores[1].Id);
+		//}
+
+		SelecionarTurmaAluno();
 	}
 
 	private static void IncluirAluno()
@@ -51,7 +53,6 @@ class Program
 		repository.Excluir(id);
 	}
 
-
 	private static void IncluirProfessor()
 	{
 		var repository = new ProfessorRepository();
@@ -75,5 +76,12 @@ class Program
 	{
 		var repository = new ProfessorRepository();
 		repository.Excluir(id);
+	}
+
+	private static void SelecionarTurmaAluno()
+	{
+		TurmaAlunoRepository repository = new TurmaAlunoRepository();
+		var dados = repository.SelecionarTudo();
+		var dadosCompletos = repository.SelecionarTudoCompleto();
 	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace Conexao.Domain.Models
 {
-	public class TurmaAluno
+	public class TurmaAluno : IEntity
 	{
         public int Id { get; set; }
         public int IdAluno { get; set; }

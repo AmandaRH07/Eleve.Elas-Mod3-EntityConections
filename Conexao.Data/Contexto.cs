@@ -13,7 +13,8 @@ namespace Conexao.Data
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("Server=localhost;Database=AmbevConexao;Trusted_Connection=True;TrustServerCertificate=True");
+			optionsBuilder.UseSqlServer("Server=localhost;Database=AmbevConexao;Trusted_Connection=True;TrustServerCertificate=True")
+				.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
 			base.OnConfiguring(optionsBuilder);
 		}
 

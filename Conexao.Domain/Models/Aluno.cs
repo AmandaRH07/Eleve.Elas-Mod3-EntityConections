@@ -1,8 +1,8 @@
 ﻿namespace Conexao.Domain.Models
 {
-	public class Aluno
+	public class Aluno : IEntity
 	{
-		public int Id { get; private set; }
+		public int Id { get; set; }
 		public string Nome { get; private set; }
 		public bool Ativo { get; private set; }
         public List<TurmaAluno> TurmaAluno { get; private set; }

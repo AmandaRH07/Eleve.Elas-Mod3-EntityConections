@@ -2,7 +2,7 @@
 
 namespace Conexao.Domain.Models
 {
-	public class Professor
+	public class Professor : IEntity
 	{
 		public int Id { get; set; }
 		public string Nome { get; set; }
