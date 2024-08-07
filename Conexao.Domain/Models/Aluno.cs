@@ -3,9 +3,9 @@
 	public class Aluno : IEntity
 	{
 		public int Id { get; set; }
-		public string Nome { get; private set; }
-		public bool Ativo { get; private set; }
-        public List<TurmaAluno> TurmaAluno { get; private set; }
+		public string Nome { get; set; }
+		public bool Ativo { get; set; }
+        public List<TurmaAluno> TurmaAluno { get; set; }
 
 		public static Aluno NovoAluno(string nome)
 		{
@@ -20,5 +20,5 @@
 			Nome = novoNome;
 			return this;
 		}
-    }
+	}
 }

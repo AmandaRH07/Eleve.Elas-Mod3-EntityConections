@@ -1,0 +1,6 @@
+@Conexao.API_HostAddress = http://localhost:5139
+
+GET {{Conexao.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
