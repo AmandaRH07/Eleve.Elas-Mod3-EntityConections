@@ -1,48 +1,49 @@
 ﻿using Conexao.Domain.Models;
+using Conexao.Domain.Repositorios;
 
 namespace Conexao.Data.Repository
 {
-	public class BaseRepository<T> where T : class, IEntity
+	public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity
 	{
-		protected readonly Contexto contexto;
+		protected readonly Contexto _contexto;
 
-        public BaseRepository()
+        public BaseRepository(Contexto contexto)
         {
-            contexto = new Contexto();
+            _contexto = contexto;
         }
 
         public void Incluir(T entity)
         {
-            contexto.Set<T>().Add(entity);
-            contexto.SaveChanges();
+            _contexto.Set<T>().Add(entity);
+            _contexto.SaveChanges();
 		}
 
         public void Alterar(T entity)
         {
-            contexto.Set<T>().Update(entity);
-            contexto.SaveChanges();
+            _contexto.Set<T>().Update(entity);
+            _contexto.SaveChanges();
         }
 
         public T Selecionar(int id)
         {
-            return contexto.Set<T>().FirstOrDefault(x => x.Id == id);
+            return _contexto.Set<T>().FirstOrDefault(x => x.Id == id);
         }
 
         public List<T> SelecionarTudo()
         {
-            return contexto.Set<T>().ToList();
+            return _contexto.Set<T>().ToList();
         }
 
         public void Excluir(int id)
         {
             var entity = Selecionar(id);
-            contexto.Set<T>().Remove(entity);
-            contexto.SaveChanges();
+            _contexto.Set<T>().Remove(entity);
+            _contexto.SaveChanges();
         }
 
 		public void Dispose()
 		{
-			contexto.Dispose();
+			_contexto.Dispose();
 		}
 	}
 }

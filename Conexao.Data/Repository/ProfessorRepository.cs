@@ -1,8 +1,12 @@
 ﻿using Conexao.Domain.Models;
+using Conexao.Domain.Repositorios;
 
 namespace Conexao.Data.Repository
 {
-	public class ProfessorRepository : BaseRepository<Professor>
+	public class ProfessorRepository : BaseRepository<Professor>, IProfessorRepository
 	{
+		public ProfessorRepository(Contexto contexto) : base(contexto)
+		{
+		}
 	}
 }

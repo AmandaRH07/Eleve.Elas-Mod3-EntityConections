@@ -11,14 +11,19 @@ namespace Conexao.Data
 		public DbSet<Turma> Turma { get; set; }
 		public DbSet<TurmaAluno> TurmaAluno { get; set; }
 
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			optionsBuilder.UseSqlServer("Server=localhost;Database=AmbevConexao;Trusted_Connection=True;TrustServerCertificate=True")
-				.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
-			base.OnConfiguring(optionsBuilder);
-		}
+        public Contexto(DbContextOptions<Contexto> options) : base(options)
+        {
+            
+        }
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //	optionsBuilder.UseSqlServer("Server=localhost;Database=AmbevConexao;Trusted_Connection=True;TrustServerCertificate=True")
+        //		.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
+        //	base.OnConfiguring(optionsBuilder);
+        //}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.ApplyConfiguration(new AlunoMap());
 			modelBuilder.ApplyConfiguration(new ProfessorMap());

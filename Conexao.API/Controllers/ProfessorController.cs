@@ -7,41 +7,41 @@ namespace Conexao.API.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class AlunoController : ControllerBase
+	public class ProfessorController : ControllerBase
 	{
-		private readonly IAlunoRepository _repository;
-        public AlunoController(IAlunoRepository repository)
-        {
+		private readonly IProfessorRepository _repository;
+		public ProfessorController(IProfessorRepository repository)
+		{
 			_repository = repository;
-        }
+		}
 
 		[HttpGet]
-		public IEnumerable<Aluno> Get()
+		public IEnumerable<Professor> Get()
 		{
 			return _repository.SelecionarTudo();
 		}
 
 		[HttpGet("{id}")]
-		public Aluno Get(int id)
+		public Professor Get(int id)
 		{
 			return _repository.Selecionar(id);
 		}
 
 		[HttpPost]
-		public IEnumerable<Aluno> Post([FromBody] AlunoDto alunoDto)
+		public IEnumerable<Professor> Post([FromBody] ProfessorDto professorDto)
 		{
-			var entity = Aluno.NovoAluno(alunoDto.Nome);
+			var entity = Professor.NovoProfessor(professorDto.Nome, professorDto.Email, professorDto.Turno);
 
 			_repository.Incluir(entity);
 			return _repository.SelecionarTudo();
 		}
 
 		[HttpPut("{id}")]
-		public Aluno Put(int id, [FromBody] AlunoDto alunoDto)
+		public Professor Put(int id, [FromBody] ProfessorDto professorDto)
 		{
 			var entity = _repository.Selecionar(id);
 
-			entity.AlterarNome(alunoDto.Nome);
+			entity.AlterarNome(professorDto.Nome);
 			_repository.Alterar(entity);
 
 			return entity;
@@ -52,5 +52,5 @@ namespace Conexao.API.Controllers
 		{
 			_repository.Excluir(id);
 		}
-    }
+	}
 }
